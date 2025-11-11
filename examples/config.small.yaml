@@ -1,0 +1,22 @@
+﻿seed: 123
+year: 2025
+homes:
+  counts: { starter: 2, intermediate: 2, advanced: 1, power: 0 }
+  region_mix: { north: 0.3, south: 0.3, arid_west: 0.2, marine_west: 0.1, east_midwest: 0.1 }
+feature_probs: { frigate: 0.3, solar: 0.2, irrigation: 0.2, energy_monitoring: 0.3 }
+grid_profiles:
+  tou_probability: 0.3
+  tou_peak_hours: [16, 21]
+  demand_charge_probability: 0.05
+occupancy_profiles:
+  wfh_ratio: [0.2, 0.5]
+  has_kids_probability: 0.5
+  shift_worker_probability: 0.05
+seasonality:
+  holiday_lights_probability: 0.5
+  vacation_weeks_per_home: [1, 2]
+  dst_observed: true
+output:
+  format: parquet
+  path: "out/demo/"
+  shards_per_month: 2

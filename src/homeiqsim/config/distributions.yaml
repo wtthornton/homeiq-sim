@@ -1,0 +1,11 @@
+﻿cadences:
+  motion_per_active_minute: [0.0, 4.0]   # range for bursts
+  template_interval_minutes: [1, 5]
+  statistics_interval_minutes: [5, 15]
+  energy_live_seconds: [5, 30]
+  energy_rollup_minutes: [1, 5]
+  tracker_seconds: [30, 180]
+  frigate:
+    base_entities: [6, 10]
+    zones: [3, 8]
+    detections: [3, 6]

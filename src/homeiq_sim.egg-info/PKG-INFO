@@ -1,0 +1,43 @@
+Metadata-Version: 2.4
+Name: homeiq-sim
+Version: 0.1.0
+Summary: Synthetic Home Assistant-style telemetry generator with regional & seasonal realism.
+License: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pydantic>=2.7
+Requires-Dist: pyarrow>=17.0
+Requires-Dist: pandas>=2.2
+Requires-Dist: click>=8.1
+Requires-Dist: numpy>=1.26
+Requires-Dist: pyyaml>=6.0
+Dynamic: license-file
+
+﻿# homeiq-sim
+
+Synthetic Home Assistant-style telemetry generator with **profiles**, **regions**, and **seasonality**.
+
+## Quickstart
+
+```bash
+uv pip install -e .
+python -m homeiqsim.cli.generate --config examples/config.full.yaml
+python -m homeiqsim.cli.validate --manifest out/2025/manifest.json
+python -m homeiqsim.cli.summarize --manifest out/2025/manifest.json
+```
+
+## Outputs
+
+* Parquet shards per month under `out/<year>/`
+* `device_registry.parquet`, `entity_registry.parquet`, `labels_YYYY.parquet`
+* `manifest.json` (schema version, counts, dataset hash, per-month stats)
+
+## Features
+
+* Profile-aware entity/device targets (Starter/Intermediate/Advanced/Power)
+* Regional multipliers (North/South/Arid West/Marine West/East-Midwest)
+* Annual daylight & synthetic weather drivers
+* Per-domain cadences (motion, templates/stats, energy, cameras/Frigate, trackers)
+* Calendar effects (DST, holidays, vacations)
+* Fault injection (drops, dupes, OoO, occasional entity_id rename)

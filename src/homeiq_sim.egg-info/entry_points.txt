@@ -1,0 +1,4 @@
+[console_scripts]
+homeiqsim-generate = homeiqsim.cli.generate:main
+homeiqsim-summarize = homeiqsim.cli.summarize:main
+homeiqsim-validate = homeiqsim.cli.validate:main

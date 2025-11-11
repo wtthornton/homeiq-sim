@@ -1,0 +1,17 @@
+﻿profiles:
+  starter:
+    entities: { median: 210, p90: 320 }
+    devices:  { median: 35,  p90: 55 }
+    sensor_virtual_share: [0.35, 0.50]
+  intermediate:
+    entities: { median: 540, p90: 820 }
+    devices:  { median: 85,  p90: 120 }
+    sensor_virtual_share: [0.50, 0.65]
+  advanced:
+    entities: { median: 960, p90: 1300 }
+    devices:  { median: 160, p90: 210 }
+    sensor_virtual_share: [0.60, 0.70]
+  power:
+    entities: { median: 1600, p90: 2300 }
+    devices:  { median: 280,  p90: 380 }
+    sensor_virtual_share: [0.65, 0.75]

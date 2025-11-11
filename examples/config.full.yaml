@@ -1,0 +1,22 @@
+﻿seed: 42
+year: 2025
+homes:
+  counts: { starter: 25, intermediate: 45, advanced: 23, power: 7 }
+  region_mix: { north: 0.22, south: 0.24, arid_west: 0.18, marine_west: 0.16, east_midwest: 0.20 }
+feature_probs: { frigate: 0.45, solar: 0.35, irrigation: 0.40, energy_monitoring: 0.50 }
+grid_profiles:
+  tou_probability: 0.45
+  tou_peak_hours: [16, 21]
+  demand_charge_probability: 0.10
+occupancy_profiles:
+  wfh_ratio: [0.2, 0.5]
+  has_kids_probability: 0.55
+  shift_worker_probability: 0.08
+seasonality:
+  holiday_lights_probability: 0.6
+  vacation_weeks_per_home: [1, 3]
+  dst_observed: true
+output:
+  format: parquet
+  path: "out/2025/"
+  shards_per_month: 8
