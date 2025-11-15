@@ -1,0 +1,42 @@
+# Demo Scenario for HomeIQ Simulator
+# A small, quick-starting configuration for testing
+
+seed: 42
+year: 2025
+
+homes:
+  counts:
+    starter: 1
+    intermediate: 1
+    advanced: 0
+    power: 0
+
+  region_mix:
+    north: 0.5
+    south: 0.5
+
+feature_probs:
+  frigate: 0.0
+  solar: 0.0
+  irrigation: 0.0
+  energy_monitoring: 1.0  # All homes have energy monitoring
+
+grid_profiles:
+  tou_probability: 0.5
+  tou_peak_hours: [16, 21]
+  demand_charge_probability: 0.0
+
+occupancy_profiles:
+  wfh_ratio: [0.3, 0.5]
+  has_kids_probability: 0.5
+  shift_worker_probability: 0.0
+
+seasonality:
+  holiday_lights_probability: 0.5
+  vacation_weeks_per_home: [1, 2]
+  dst_observed: true
+
+output:
+  format: parquet
+  path: "out/demo/"
+  shards_per_month: 2

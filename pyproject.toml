@@ -1,7 +1,7 @@
 [project]
 name = "homeiq-sim"
-version = "0.1.0"
-description = "Synthetic Home Assistant-style telemetry generator with regional & seasonal realism."
+version = "1.0.0"
+description = "Full-featured Home Assistant simulator with regional & seasonal realism for HomeIQ data collection."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
@@ -11,13 +11,24 @@ dependencies = [
   "pandas>=2.2",
   "click>=8.1",
   "numpy>=1.26",
-  "pyyaml>=6.0"
+  "pyyaml>=6.0",
+  "fastapi>=0.110",
+  "uvicorn[standard]>=0.30",
+  "websockets>=12.0",
+  "paho-mqtt>=2.0",
+  "jinja2>=3.1",
+  "croniter>=2.0",
+  "aiohttp>=3.9",
+  "python-multipart>=0.0.9",
+  "asyncio-mqtt>=0.16"
 ]
 
 [project.scripts]
 homeiqsim-generate = "homeiqsim.cli.generate:main"
 homeiqsim-validate = "homeiqsim.cli.validate:main"
 homeiqsim-summarize = "homeiqsim.cli.summarize:main"
+homeiqsim-serve = "homeiqsim.cli.serve:main"
+homeiqsim-scenario = "homeiqsim.cli.scenario:main"
 
 [tool.ruff]
 line-length = 100
